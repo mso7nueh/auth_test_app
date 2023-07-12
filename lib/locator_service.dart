@@ -13,13 +13,13 @@ Future<void> init() async {
 
   // Repository
   sl.registerLazySingleton<LoginRepository>(
-        () => LoginRepositoryImpl(
-      loginRemoteDataSourceImpl: sl(),
+    () => LoginRepositoryImpl(
+      loginRemoteDataSource: sl(),
     ),
   );
 
-  sl.registerLazySingleton<LoginRemoteDataSourceImpl>(
-        () => LoginRemoteDataSourceImpl(
+  sl.registerLazySingleton<LoginRemoteDataSource>(
+    () => LoginRemoteDataSourceImpl(
       client: sl(),
     ),
   );

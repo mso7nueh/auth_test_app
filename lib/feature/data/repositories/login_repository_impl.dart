@@ -5,14 +5,13 @@ import 'package:auth_test_app/feature/domain/repositories/login_repository.dart'
 import 'package:dartz/dartz.dart';
 
 class LoginRepositoryImpl extends LoginRepository {
-  final LoginRemoteDataSourceImpl loginRemoteDataSourceImpl;
+  final LoginRemoteDataSource loginRemoteDataSource;
 
-  LoginRepositoryImpl(
-      {required this.loginRemoteDataSourceImpl});
+  LoginRepositoryImpl({required this.loginRemoteDataSource});
 
   @override
   Future<Either<Failure, String>> login(String email, String password) async {
-    return await _login(() => loginRemoteDataSourceImpl.login(email, password));
+    return await _login(() => loginRemoteDataSource.login(email, password));
   }
 
   Future<Either<Failure, String>> _login(
