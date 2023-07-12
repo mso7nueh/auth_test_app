@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:auth_test_app/locator_service.dart' as di;
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
   runApp(const MyApp());
 }
 
