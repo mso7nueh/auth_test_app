@@ -39,6 +39,7 @@ class LoginCardWidget extends StatelessWidget {
               textInputType: TextInputType.emailAddress,
               labelText: 'E-mail',
               controller: emailTextEditingController,
+              icon: '',
             ),
             Padding(
               padding: const EdgeInsets.only(top: 12.0, bottom: 12.0),
@@ -46,6 +47,7 @@ class LoginCardWidget extends StatelessWidget {
                 textInputType: TextInputType.visiblePassword,
                 labelText: 'Пароль',
                 controller: passwordTextEditingController,
+                icon: '',
               ),
             ),
             Container(
