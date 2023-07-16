@@ -4,13 +4,18 @@ import 'package:flutter/material.dart';
 class TextFieldOmegaStyle extends StatelessWidget {
   final TextInputType textInputType;
   final String labelText;
+  final TextEditingController controller;
 
   const TextFieldOmegaStyle(
-      {super.key, required this.textInputType, required this.labelText});
+      {super.key,
+      required this.textInputType,
+      required this.labelText,
+      required this.controller});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       obscureText:
           textInputType == TextInputType.visiblePassword ? true : false,
       cursorColor: AppColors.textPColor,

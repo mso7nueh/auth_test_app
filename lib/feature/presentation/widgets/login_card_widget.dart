@@ -7,6 +7,9 @@ import 'package:auth_test_app/feature/presentation/widgets/text_field_widget.dar
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
+final emailTextEditingController = TextEditingController();
+final passwordTextEditingController = TextEditingController();
+
 class LoginCardWidget extends StatelessWidget {
   const LoginCardWidget({super.key});
 
@@ -28,15 +31,17 @@ class LoginCardWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const HeaderAuthDialogText(),
-            const TextFieldOmegaStyle(
+            TextFieldOmegaStyle(
               textInputType: TextInputType.emailAddress,
               labelText: 'E-mail',
+              controller: emailTextEditingController,
             ),
-            const Padding(
-              padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
+            Padding(
+              padding: const EdgeInsets.only(top: 12.0, bottom: 12.0),
               child: TextFieldOmegaStyle(
                 textInputType: TextInputType.visiblePassword,
                 labelText: 'Пароль',
+                controller: passwordTextEditingController,
               ),
             ),
             Container(
