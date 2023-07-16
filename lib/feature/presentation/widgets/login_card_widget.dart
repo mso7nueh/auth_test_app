@@ -1,3 +1,5 @@
+import 'dart:ui' as ui;
+
 import 'package:auth_test_app/common/app_colors.dart';
 import 'package:auth_test_app/feature/presentation/widgets/button_widget.dart';
 import 'package:auth_test_app/feature/presentation/widgets/header_auth_dialog_text_widget.dart';
@@ -5,13 +7,14 @@ import 'package:auth_test_app/feature/presentation/widgets/or_join_with_widget.d
 import 'package:auth_test_app/feature/presentation/widgets/social_join_buttons_group_widget.dart';
 import 'package:auth_test_app/feature/presentation/widgets/text_field_widget.dart';
 import 'package:flutter/material.dart';
-import 'dart:ui' as ui;
 
 final emailTextEditingController = TextEditingController();
 final passwordTextEditingController = TextEditingController();
 
 class LoginCardWidget extends StatelessWidget {
-  const LoginCardWidget({super.key});
+  final double width;
+
+  const LoginCardWidget({super.key, required this.width});
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +24,7 @@ class LoginCardWidget extends StatelessWidget {
         sigmaY: 7.5,
       ),
       child: Container(
+        width: width,
         padding: const EdgeInsets.all(30.0),
         decoration: BoxDecoration(
           color: const Color.fromARGB(191, 255, 255, 255),
