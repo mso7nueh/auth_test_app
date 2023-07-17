@@ -29,7 +29,7 @@ class HeaderForWebPageWidget extends StatelessWidget {
             children: [
               Image.network(
                   width: 100, height: 50, 'https://i.imgur.com/62e4KPT.png'),
-              _inHeaderText('Игры'),
+              _inHeaderText('Игры', true),
               _inHeaderText('Приложения'),
               _inHeaderText('Сообщество'),
               _inHeaderText('Турнир'),
@@ -78,14 +78,18 @@ class HeaderForWebPageWidget extends StatelessWidget {
     );
   }
 
-  Widget _inHeaderText(String text) {
+  Widget _inHeaderText(String text, [bool? isSelected]) {
     return Padding(
       padding: const EdgeInsets.only(left: 25.0),
       child: Text(
         text,
-        style: const TextStyle(
+        style: TextStyle(
+          color: Colors.transparent,
+          decorationColor: AppColors.mainButtonColor,
+          decorationThickness: 2.0,
+          shadows: [Shadow(color: AppColors.textHColor, offset: Offset(0, isSelected != null ? -5 : -3))],
+          decoration: isSelected != null ? TextDecoration.underline : null,
           fontWeight: FontWeight.w500,
-          color: AppColors.textHColor,
           fontSize: 15,
         ),
       ),
