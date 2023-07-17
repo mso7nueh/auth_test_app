@@ -10,4 +10,5 @@ class AppColors {
   static const textHColor = Color(0xFF0B1023);
   static const linkTextColor = Color(0xFFF03D4B);
   static const footerBackgroundColor = Color(0xFF2A083D);
+  static const footerIconColor = Color(0xFF0B1023);
 }

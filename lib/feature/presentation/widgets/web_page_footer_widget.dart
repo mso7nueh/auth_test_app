@@ -1,6 +1,7 @@
 import 'package:auth_test_app/common/app_colors.dart';
 import 'package:auth_test_app/common/image_urls.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class FooterForWebPageWidget extends StatelessWidget {
   const FooterForWebPageWidget({super.key});
@@ -55,6 +56,31 @@ class FooterForWebPageWidget extends StatelessWidget {
                   _paragraphText('Контакты'),
                   _paragraphText('Новости'),
                   _paragraphText('Справка'),
+                ],
+              ),
+              const Spacer(),
+              Column(
+                children: [
+                  _button('assets/icons/download.svg', 'Скачать приложение'),
+                  const SizedBox(height: 30),
+                  Row(
+                    children: [
+                      const Text(
+                        'Социальные \nсети:',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      const SizedBox(width: 15),
+                      _button('assets/icons/vk.svg'),
+                      const SizedBox(width: 10),
+                      _button('assets/icons/telegram.svg'),
+                      const SizedBox(width: 10),
+                      _button('assets/icons/youtube.svg'),
+                    ],
+                  ),
                 ],
               ),
             ],
@@ -129,6 +155,36 @@ class FooterForWebPageWidget extends StatelessWidget {
           fontSize: 16,
           fontWeight: FontWeight.w400,
         ),
+      ),
+    );
+  }
+
+  Widget _button(String icon, [String? text]) {
+    return Container(
+      padding: text == null ? null : const EdgeInsets.only(left: 22.0, right: 32.0),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: Row(
+        children: [
+          Container(
+            margin: const EdgeInsets.all(10.0),
+            height: 24,
+            width: 24,
+            child: SvgPicture.asset(
+              icon,
+            ),
+          ),
+          Text(
+            text ?? '',
+            style: const TextStyle(
+              color: AppColors.footerIconColor,
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
       ),
     );
   }
