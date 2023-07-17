@@ -42,10 +42,18 @@ class ButtonOmegaStyle extends StatelessWidget {
             foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
           ),
           child: state is! LoginStateLoading
-              ? const Padding(
+              ? Padding(
                   padding: EdgeInsets.all(13.0),
                   child: Text(
-                    'Войти',
+                    state is LoginStateLoaded
+                        ? 'Успешный вход'
+                        : state is LoginStateError &&
+                                state.message == 'Login Failure'
+                            ? 'Неверный логин или пароль'
+                            : state is LoginStateError &&
+                                    state.message == 'Server Failure'
+                                ? 'Ошибка сервера'
+                                : 'Войти',
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 16,

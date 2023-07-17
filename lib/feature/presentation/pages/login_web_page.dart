@@ -1,5 +1,6 @@
 import 'package:auth_test_app/common/image_urls.dart';
 import 'package:auth_test_app/feature/presentation/widgets/login_card_widget.dart';
+import 'package:auth_test_app/feature/presentation/widgets/web_page_footer_widget.dart';
 import 'package:auth_test_app/feature/presentation/widgets/web_page_header_wiget.dart';
 import 'package:flutter/material.dart';
 
@@ -32,6 +33,7 @@ class LoginPageForWeb extends StatelessWidget {
               ),
             ],
           ),
+          const FooterForWebPageWidget(),
         ],
       ),
     );
